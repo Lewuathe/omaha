@@ -26,6 +26,6 @@ class Client(object):
         return j
 
     def company(self, ticker):
-        res = self._get('/company')
+        res = self._get("/company")
         j = res.json()
         return j[ticker]
