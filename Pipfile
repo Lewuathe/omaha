@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+twine = '*'
+pre-commit = '*'
+requests-mock = '*'
+
+[packages]
+pandas = '*'
+requests = '*'
+cachetools = '*'
+
+[requires]
+python_version = "3.7"
