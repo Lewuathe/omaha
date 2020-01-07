@@ -1,7 +1,9 @@
 import logging
 
-from .client import Client
-from .indicator import Indicator
+from .omaha import Omaha
+# from .client import Client
+# from .indicator import Indicator
+# from .company import Company
 from .version import __version__
 
 logger = logging.getLogger(__name__)

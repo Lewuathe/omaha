@@ -15,5 +15,5 @@ class Indicator(object):
     @cached(cache={})
     def get(self, ticker, from_q, to_q):
         q = self.client.quarter(ticker, from_q, to_q)
-        c = self.client.company(ticker)
+        # c = self.client.company(ticker)
         return pd.DataFrame(q[ticker])
