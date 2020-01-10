@@ -1,4 +1,4 @@
-# Omaha
+# Omaha [![Actions Status](https://github.com/Lewuathe/omaha/workflows/test/badge.svg)](https://github.com/Lewuathe/omaha/actions)
 
 Omaha aims to provide a unified view of financial metrics of the company.
 
