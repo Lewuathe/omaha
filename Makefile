@@ -1,4 +1,4 @@
-.PHONY: package clean
+.PHONY: package clean test
 
 PACKAGE_TYPES:=sdist bdist_wheel
 
@@ -7,3 +7,6 @@ package:
 
 clean:
 	rm -rf dist build
+
+test:
+	python setup.py test

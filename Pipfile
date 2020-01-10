@@ -13,6 +13,7 @@ omaha = {editable = true,path = "."}
 pandas = '*'
 requests = '*'
 cachetools = '*'
+quandl = "*"
 
 [requires]
 python_version = "3.7"

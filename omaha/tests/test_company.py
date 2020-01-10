@@ -20,7 +20,7 @@ class CompanyTest(unittest.TestCase):
               {'company_name': '海山商事', 'fiscal_year': '2019', 'fiscal_quarter': '3'}
             ]
         })
-        self.company = Company('1111', mock_client)
+        self.company = Company('1111', '2019Q1', '2019Q4', mock_client)
 
     def test_dict_pairs(self):
         res = Company.dict_pairs({'a': 1, 'b': 2, 'c': 3}, ['a', 'b'])
@@ -29,4 +29,4 @@ class CompanyTest(unittest.TestCase):
     def test_company_name(self):
         expected = [{'company_name': '海山商事', 'fiscal_quarter': '4', 'fiscal_year': '2019'},
                     {'company_name': '海山商事', 'fiscal_quarter': '3', 'fiscal_year': '2019'}]
-        self.assertEqual(expected, self.company.get('company_name', '2019Q1', '2019Q4'))
+        self.assertEqual(expected, self.company.get('company_name'))
