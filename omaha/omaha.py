@@ -11,5 +11,5 @@ class Omaha(object):
     def company(self, ticker, from_q, to_q):
         return Company(ticker, from_q, to_q,  self.client)
 
-    def stockprice(self, ticker):
-        return Stockprice(ticker)
+    def stockprice(self, ticker, start_date, end_date):
+        return Stockprice(ticker, start_date, end_date)

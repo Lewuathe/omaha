@@ -30,7 +30,7 @@ factory = Omaha(bc_apikey='XXXXXXX', quandl_apikey='YYYYYYY')
 company = factory.company('1376', '2018Q1', '2019Q4')
 
 # Daily stock prices for the ticker symbol 1376
-stockprice = factory.stockprice('1376')
+stockprice = factory.stockprice('1376', '2018-01-01', '2018-12-31')
 ```
 
 ## Development

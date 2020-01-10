@@ -38,11 +38,13 @@ class Company(Joinable):
         return df
 
 class Stockprice(Joinable):
-    def __init__(self, ticker):
+    def __init__(self, ticker, start_date, end_date):
         self.ticker = ticker
+        self.start_date = start_date
+        self.end_date = end_date
         super().__init__([self])
 
     def raw_df(self):
-        df = quandl.get(f'XJPX/{self.ticker}0')
+        df = quandl.get(f'XJPX/{self.ticker}0', start_date=self.start_date, end_date=self.end_date)
         df.index = [pd.Timestamp(s, tz='UTC') for s in df.index]
         return df
