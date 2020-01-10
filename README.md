@@ -1,4 +1,4 @@
-# Omaha [![Actions Status](https://github.com/Lewuathe/omaha/workflows/test/badge.svg)](https://github.com/Lewuathe/omaha/actions)
+# Omaha [![Actions Status](https://github.com/Lewuathe/omaha/workflows/test/badge.svg)](https://github.com/Lewuathe/omaha/actions) ![PyPI](https://img.shields.io/pypi/v/omaha) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/omaha) ![PyPI - Status](https://img.shields.io/pypi/status/omaha) ![PyPI - License](https://img.shields.io/pypi/l/omaha)
 
 Omaha aims to provide a unified view of financial metrics of the company.
 
