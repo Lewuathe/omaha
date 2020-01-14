@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class Joinable(object):
     def __init__(self, joinables):
         self.joinables = joinables
@@ -12,4 +13,4 @@ class Joinable(object):
 
     def df(self):
         dfs = [j.raw_df() for j in self.joinables]
-        return pd.concat(dfs, axis=1, join='inner')
+        return pd.concat(dfs, axis=1, join="inner")

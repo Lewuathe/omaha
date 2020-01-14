@@ -10,7 +10,7 @@ class Client(object):
 
     ENDPOINT = "https://api.buffett-code.com"
 
-    def _get(self, path, params = {}):
+    def _get(self, path, params={}):
         headers = {"x-api-key": self.apikey}
         return requests.get(
             f"{Client.ENDPOINT}/api/v2{path}", params=params, headers=headers

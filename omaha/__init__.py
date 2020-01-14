@@ -1,6 +1,7 @@
 import logging
 
 from .omaha import Omaha
+
 # from .client import Client
 # from .indicator import Indicator
 # from .company import Company

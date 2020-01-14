@@ -3,6 +3,7 @@ from .company import Company
 from .company import Stockprice
 import quandl
 
+
 class Omaha(object):
     """Omaha provides a unified view of the financial information of the public companies."""
 
@@ -22,7 +23,7 @@ class Omaha(object):
         :Example:
         >>>
         """
-        return Company(ticker, from_q, to_q,  self.client)
+        return Company(ticker, from_q, to_q, self.client)
 
     def stockprice(self, ticker, start_date, end_date):
         """Stockprice of the given company
