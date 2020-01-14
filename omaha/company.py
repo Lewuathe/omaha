@@ -21,6 +21,12 @@ class Company(Joinable):
     def __get(self, from_q, to_q):
         return self.client.quarter(self.ticker, from_q, to_q)
 
+    def __str__(self):
+        return f"Company({self.ticker}, {self.from_q}, {self.to_q})"
+
+    def __repr__(self):
+        return self.__str__()
+
     def get(self, item):
         res = self.__get(self.from_q, self.to_q)
         keys = [item, 'fiscal_year', 'fiscal_quarter']

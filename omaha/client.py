@@ -28,3 +28,8 @@ class Client(object):
         res = self._get("/company")
         j = res.json()
         return j[ticker]
+
+    def search(self, keywords):
+        res = self._get("/search", {"keywords": keywords})
+        j = res.json()
+        return j
