@@ -43,6 +43,13 @@ view.df().head()
 #2018-08-31 00:00:00+00:00    カネコ種苗株式会社  代表取締役社長　　金子　昌彦   群馬県前橋市古市町一丁目50番地12 ...  1479.188532  1479.188532
 ```
 
+If you are unsure the ticker symbol of the company, `search` feature is available. You can get the list of companies matching the given keyword.
+
+```python
+factory.search("不動産", "2019Q1", "2019Q4")
+# [Company(8881, 2019Q1, 2019Q4), Company(8802, 2019Q1, 2019Q4), Company(3465, 2019Q1, 2019Q4),...]
+```
+
 ## Development
 
 You can develop the package as editable dependencies with Pipenv.
