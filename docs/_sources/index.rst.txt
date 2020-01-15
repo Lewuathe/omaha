@@ -6,8 +6,9 @@
 Omaha
 =================================
 
+------------------------------------------------------------------
 Unified view of financial metrics of public companies
---------------------------------
+------------------------------------------------------------------
 
 Omaha aims to provide a unified view of financial metrics of the company. It's designed to provide comprehensive data set for the financial analysis.
 
@@ -37,8 +38,22 @@ Omaha aims to provide a unified view of financial metrics of the company. It's d
    factory.search("不動産", "2019Q1", "2019Q4")
    # [Company(8881, 2019Q1, 2019Q4), Company(8802, 2019Q1, 2019Q4), Company(3465, 2019Q1, 2019Q4),...]
 
+---------------------------------
+External Services
+---------------------------------
+
+Omaha is dependent on the external services to get the fresh financial data. This is the list of services used in omaha.
+
+- `Buffett Code <https://www.buffett-code.com/>`_
+- `Quandl <https://www.quandl.com/>`_
+
+Please get the API keys for these service in advance.
+
+---------------------------------
+API Documentation
+---------------------------------
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    omaha
