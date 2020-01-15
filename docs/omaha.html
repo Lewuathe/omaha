@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>omaha package &#8212; omaha  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="omaha.tests package" href="omaha.tests.html" />
+    <link rel="prev" title="Omaha" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="omaha-package">
+<h1>omaha package<a class="headerlink" href="#omaha-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="omaha.tests.html">omaha.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#module-omaha.tests.joinable_test">omaha.tests.joinable_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#module-omaha.tests.test_client">omaha.tests.test_client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#module-omaha.tests.test_company">omaha.tests.test_company module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#module-omaha.tests.test_indicator">omaha.tests.test_indicator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omaha.tests.html#module-omaha.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-omaha.client">
+<span id="omaha-client-module"></span><h2>omaha.client module<a class="headerlink" href="#module-omaha.client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="omaha.client.Client">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.client.</code><code class="sig-name descname">Client</code><span class="sig-paren">(</span><em class="sig-param">apikey</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/client.html#Client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Buffett Code API Client</p>
+<dl class="attribute">
+<dt id="omaha.client.Client.apikey">
+<code class="sig-name descname">apikey</code><a class="headerlink" href="#omaha.client.Client.apikey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apikey for BuffettCode API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="omaha.client.Client.ENDPOINT">
+<code class="sig-name descname">ENDPOINT</code><em class="property"> = 'https://api.buffett-code.com'</em><a class="headerlink" href="#omaha.client.Client.ENDPOINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="omaha.client.Client.companies">
+<code class="sig-name descname">companies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/client.html#Client.companies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.client.Client.companies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Company endpoint</p>
+<p>See: <a class="reference external" href="http://docs.buffett-code.com/#/default/get_api_v2_company">http://docs.buffett-code.com/#/default/get_api_v2_company</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.client.Client.quarter">
+<code class="sig-name descname">quarter</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/client.html#Client.quarter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.client.Client.quarter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quarter endpoint</p>
+<p>See: <a class="reference external" href="http://docs.buffett-code.com/#/default/get_api_v2_quarter">http://docs.buffett-code.com/#/default/get_api_v2_quarter</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>str</em>) – Ticker symbol</p></li>
+<li><p><strong>from_q</strong> (<em>str</em>) – Beginning quarter of the target range</p></li>
+<li><p><strong>to_q</strong> (<em>str</em>) – End quarter of the target range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.client.Client.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/client.html#Client.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.client.Client.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search endpoint</p>
+<p>See: <a class="reference external" href="http://docs.buffett-code.com/#/default/get_api_v2_search">http://docs.buffett-code.com/#/default/get_api_v2_search</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omaha.company">
+<span id="omaha-company-module"></span><h2>omaha.company module<a class="headerlink" href="#module-omaha.company" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="omaha.company.Company">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.company.</code><code class="sig-name descname">Company</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em>, <em class="sig-param">client</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Company"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Company" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omaha.joinable.Joinable" title="omaha.joinable.Joinable"><code class="xref py py-class docutils literal notranslate"><span class="pre">omaha.joinable.Joinable</span></code></a></p>
+<p>Container for the financial indicators of the public company</p>
+<dl class="attribute">
+<dt id="omaha.company.Company.ticker">
+<code class="sig-name descname">ticker</code><a class="headerlink" href="#omaha.company.Company.ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ticker symbol</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="omaha.company.Company.from_q">
+<code class="sig-name descname">from_q</code><a class="headerlink" href="#omaha.company.Company.from_q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Beginning quarter of the target range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="omaha.company.Company.to_q">
+<code class="sig-name descname">to_q</code><a class="headerlink" href="#omaha.company.Company.to_q" title="Permalink to this definition">¶</a></dt>
+<dd><p>End quarter of the target range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="omaha.company.Company.client">
+<code class="sig-name descname">client</code><a class="headerlink" href="#omaha.company.Company.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>BuffettCode API Client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#omaha.client.Client" title="omaha.client.Client">Client</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.company.Company.all">
+<code class="sig-name descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Company.all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Company.all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="omaha.company.Company.dict_pairs">
+<em class="property">classmethod </em><code class="sig-name descname">dict_pairs</code><span class="sig-paren">(</span><em class="sig-param">d</em>, <em class="sig-param">keys</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Company.dict_pairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Company.dict_pairs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="omaha.company.Company.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">item</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Company.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Company.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="omaha.company.Company.raw_df">
+<code class="sig-name descname">raw_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Company.raw_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Company.raw_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="omaha.company.Stockprice">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.company.</code><code class="sig-name descname">Stockprice</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">start_date</em>, <em class="sig-param">end_date</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Stockprice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Stockprice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omaha.joinable.Joinable" title="omaha.joinable.Joinable"><code class="xref py py-class docutils literal notranslate"><span class="pre">omaha.joinable.Joinable</span></code></a></p>
+<p>Container for the daily stockprice of the public company.</p>
+<dl class="method">
+<dt id="omaha.company.Stockprice.raw_df">
+<code class="sig-name descname">raw_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/company.html#Stockprice.raw_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.company.Stockprice.raw_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omaha.indicator">
+<span id="omaha-indicator-module"></span><h2>omaha.indicator module<a class="headerlink" href="#module-omaha.indicator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="omaha.indicator.Indicator">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.indicator.</code><code class="sig-name descname">Indicator</code><span class="sig-paren">(</span><em class="sig-param">apikey</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/indicator.html#Indicator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.indicator.Indicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Financial indicators for the given company</p>
+<dl class="method">
+<dt id="omaha.indicator.Indicator.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/indicator.html#Indicator.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.indicator.Indicator.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omaha.joinable">
+<span id="omaha-joinable-module"></span><h2>omaha.joinable module<a class="headerlink" href="#module-omaha.joinable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="omaha.joinable.Joinable">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.joinable.</code><code class="sig-name descname">Joinable</code><span class="sig-paren">(</span><em class="sig-param">joinables</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/joinable.html#Joinable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.joinable.Joinable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Joinable views</p>
+<p>The dataframe of the class can be joined with the end date of the financial report.</p>
+<dl class="method">
+<dt id="omaha.joinable.Joinable.df">
+<code class="sig-name descname">df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/joinable.html#Joinable.df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.joinable.Joinable.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>DataFrame representing the underlying financial data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>DataFrame representing the underlying financial data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.joinable.Joinable.join">
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/joinable.html#Joinable.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.joinable.Joinable.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joined with other financial data container.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.joinable.Joinable.raw_df">
+<code class="sig-name descname">raw_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/joinable.html#Joinable.raw_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.joinable.Joinable.raw_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omaha.omaha">
+<span id="omaha-omaha-module"></span><h2>omaha.omaha module<a class="headerlink" href="#module-omaha.omaha" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="omaha.omaha.Omaha">
+<em class="property">class </em><code class="sig-prename descclassname">omaha.omaha.</code><code class="sig-name descname">Omaha</code><span class="sig-paren">(</span><em class="sig-param">bc_apikey</em>, <em class="sig-param">quandl_apikey</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Omaha provides a unified view of the financial information of the public companies.</p>
+<dl class="attribute">
+<dt id="omaha.omaha.Omaha.bc_apikey">
+<code class="sig-name descname">bc_apikey</code><a class="headerlink" href="#omaha.omaha.Omaha.bc_apikey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apikey of BuffettCode API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="omaha.omaha.Omaha.quandl_apikey">
+<code class="sig-name descname">quandl_apikey</code><a class="headerlink" href="#omaha.omaha.Omaha.quandl_apikey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apikey of Quandl</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.omaha.Omaha.category">
+<code class="sig-name descname">category</code><span class="sig-paren">(</span><em class="sig-param">cat</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of companies filtering by the given category</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.omaha.Omaha.company">
+<code class="sig-name descname">company</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.company"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.company" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic financial indicators of the company</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>str</em>) – Ticker symbol</p></li>
+<li><p><strong>from_q</strong> (<em>str</em>) – Beginning of the target quarter</p></li>
+<li><p><strong>to_q</strong> (<em>str</em>) – End of the target quarter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Target company</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#omaha.company.Company" title="omaha.company.Company">Company</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span> <span class="o">=</span> <span class="n">Omaha</span><span class="p">(</span><span class="n">bc_apikey</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span><span class="p">),</span> <span class="n">quandl_apikey</span><span class="o">=</span><span class="s1">&#39;yyyy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span><span class="o">.</span><span class="n">company</span><span class="p">(</span><span class="s1">&#39;1111&#39;</span><span class="p">,</span> <span class="s1">&#39;2019Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;2019Q4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.omaha.Omaha.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">keywords</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of matched companies with given search keyword</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="omaha.omaha.Omaha.stockprice">
+<code class="sig-name descname">stockprice</code><span class="sig-paren">(</span><em class="sig-param">ticker</em>, <em class="sig-param">start_date</em>, <em class="sig-param">end_date</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.stockprice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.stockprice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stockprice of the given company</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>str</em>) – Ticker symbol</p></li>
+<li><p><strong>start_date</strong> (<em>str</em>) – Start date of the target range</p></li>
+<li><p><strong>end_date</strong> (<em>str</em>) – End date of the target range</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Object containing stock prices</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#omaha.company.Stockprice" title="omaha.company.Stockprice">Stockprice</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span> <span class="o">=</span> <span class="n">Omaha</span><span class="p">(</span><span class="n">bc_apikey</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span><span class="p">),</span> <span class="n">quandl_apikey</span><span class="o">=</span><span class="s1">&#39;yyyy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span><span class="o">.</span><span class="n">stockprice</span><span class="p">(</span><span class="s1">&#39;1111&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-12-31&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omaha.version">
+<span id="omaha-version-module"></span><h2>omaha.version module<a class="headerlink" href="#module-omaha.version" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-omaha">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-omaha" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">omaha</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">omaha package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.client">omaha.client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.company">omaha.company module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.indicator">omaha.indicator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.joinable">omaha.joinable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.omaha">omaha.omaha module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha.version">omaha.version module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-omaha">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Omaha</a></li>
+      <li>Next: <a href="omaha.tests.html" title="next chapter">omaha.tests package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Kai Sasaki.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/omaha.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

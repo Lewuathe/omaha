@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>omaha.client &#8212; omaha  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for omaha.client</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">cachetools</span> <span class="kn">import</span> <span class="n">cached</span>
+
+<div class="viewcode-block" id="Client"><a class="viewcode-back" href="../../omaha.html#omaha.client.Client">[docs]</a><span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Buffett Code API Client</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        apikey (str): Apikey for BuffettCode API</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://api.buffett-code.com&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x-api-key&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">apikey</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{Client.ENDPOINT}</span><span class="s2">/api/v2</span><span class="si">{path}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apikey</span> <span class="o">=</span> <span class="n">apikey</span>
+
+<div class="viewcode-block" id="Client.quarter"><a class="viewcode-back" href="../../omaha.html#omaha.client.Client.quarter">[docs]</a>    <span class="nd">@cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="p">{})</span>
+    <span class="k">def</span> <span class="nf">quarter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">from_q</span><span class="p">,</span> <span class="n">to_q</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Quarter endpoint</span>
+
+<span class="sd">        See: http://docs.buffett-code.com/#/default/get_api_v2_quarter</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">          ticker (str): Ticker symbol</span>
+<span class="sd">          from_q (str): Beginning quarter of the target range</span>
+<span class="sd">          to_q (str): End quarter of the target range</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s2">&quot;/quarter&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;tickers&quot;</span><span class="p">:</span> <span class="n">ticker</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="n">from_q</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="n">to_q</span><span class="p">})</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">j</span></div>
+
+<div class="viewcode-block" id="Client.companies"><a class="viewcode-back" href="../../omaha.html#omaha.client.Client.companies">[docs]</a>    <span class="nd">@cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="p">{})</span>
+    <span class="k">def</span> <span class="nf">companies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Company endpoint</span>
+
+<span class="sd">        See: http://docs.buffett-code.com/#/default/get_api_v2_company</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s2">&quot;/company&quot;</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">j</span></div>
+
+<div class="viewcode-block" id="Client.search"><a class="viewcode-back" href="../../omaha.html#omaha.client.Client.search">[docs]</a>    <span class="nd">@cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="p">{})</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keywords</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Search endpoint</span>
+
+<span class="sd">        See: http://docs.buffett-code.com/#/default/get_api_v2_search</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s2">&quot;/search&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="n">keywords</span><span class="p">})</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">j</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">omaha</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../omaha.html">omaha package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Kai Sasaki.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

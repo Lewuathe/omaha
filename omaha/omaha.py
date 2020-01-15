@@ -5,7 +5,12 @@ import quandl
 
 
 class Omaha(object):
-    """Omaha provides a unified view of the financial information of the public companies."""
+    """Omaha provides a unified view of the financial information of the public companies.
+
+    Attributes:
+        bc_apikey (str): Apikey of BuffettCode API
+        quandl_apikey (str): Apikey of Quandl
+    """
 
     def __init__(self, bc_apikey, quandl_apikey):
         self.client = Client(bc_apikey)
@@ -14,24 +19,54 @@ class Omaha(object):
     def company(self, ticker, from_q, to_q):
         """Basic financial indicators of the company
 
-        :param ticker: str
-        :param from_q: str
-        :param to_q: str
-        :return: Company
-        :rtype: Company
+        Args:
+            ticker (str): Ticker symbol
+            from_q (str): Beginning of the target quarter
+            to_q (str): End of the target quarter
 
-        :Example:
-        >>>
+        Returns:
+            Company: Target company
+
+        Example:
+            >>> factory = Omaha(bc_apikey='xxxx'), quandl_apikey='yyyy')
+            >>> factory.company('1111', '2019Q1', '2019Q4')
         """
         return Company(ticker, from_q, to_q, self.client)
 
     def stockprice(self, ticker, start_date, end_date):
         """Stockprice of the given company
+
+        Args:
+            ticker (str): Ticker symbol
+            start_date (str): Start date of the target range
+            end_date (str): End date of the target range
+
+        Returns:
+            Stockprice: Object containing stock prices
+
+        Example:
+            >>> factory = Omaha(bc_apikey='xxxx'), quandl_apikey='yyyy')
+            >>> factory.stockprice('1111', '2019-01-01', '2019-12-31')
         """
         return Stockprice(ticker, start_date, end_date)
 
     def search(self, keywords, from_q, to_q):
-        """List of matched companies
+        """List of matched companies with given search keyword
         """
         tickers = self.client.search(keywords)
         return [self.company(ticker, from_q, to_q) for ticker in tickers]
+
+    def category(self, cat, from_q, to_q):
+        """List of companies filtering by the given category
+        """
+        companies = self.client.companies()
+        tickers = []
+        for ticker, company in companies.items():
+            if ticker == 'column_description':
+                continue
+            if company[0]['tosyo_33category'] == cat:
+                tickers.append(ticker)
+
+        return [self.company(ticker, from_q, to_q) for ticker in tickers]
+
+

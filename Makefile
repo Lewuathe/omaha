@@ -6,11 +6,11 @@ package:
 	python setup.py $(PACKAGE_TYPES)
 
 clean:
-	rm -rf dist build site
+	rm -rf dist build docs/_build
 
 test:
 	python setup.py test
 
 docs:
-	sphinx-apidoc -F -o docs omaha
-	sphinx-build -b html docs site
+	sphinx-apidoc -F -o source omaha
+	sphinx-build -b html source docs

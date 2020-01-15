@@ -33,3 +33,12 @@ Omaha aims to provide a unified view of financial metrics of the company. It's d
    #                             company_name     ceo_name                  headquarters_address        ...   Low         Close
    #2018-11-30 00:00:00+00:00    カネコ種苗株式会社  代表取締役社長　　金子　昌彦   群馬県前橋市古市町一丁目50番地12 ...  1389.568777  1408.187823
    #2018-08-31 00:00:00+00:00    カネコ種苗株式会社  代表取締役社長　　金子　昌彦   群馬県前橋市古市町一丁目50番地12 ...  1479.188532  1479.188532
+
+   factory.search("不動産", "2019Q1", "2019Q4")
+   # [Company(8881, 2019Q1, 2019Q4), Company(8802, 2019Q1, 2019Q4), Company(3465, 2019Q1, 2019Q4),...]
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   omaha

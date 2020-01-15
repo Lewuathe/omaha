@@ -7,6 +7,14 @@ from omaha.joinable import Joinable
 
 
 class Company(Joinable):
+    """Container for the financial indicators of the public company
+
+    Attributes:
+        ticker (str): Ticker symbol
+        from_q (str): Beginning quarter of the target range
+        to_q (str): End quarter of the target range
+        client (Client): BuffettCode API Client
+    """
     def __init__(self, ticker, from_q, to_q, client):
         self.ticker = ticker
         self.client = client
@@ -46,6 +54,8 @@ class Company(Joinable):
 
 
 class Stockprice(Joinable):
+    """Container for the daily stockprice of the public company.
+    """
     def __init__(self, ticker, start_date, end_date):
         self.ticker = ticker
         self.start_date = start_date
