@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="omaha.tests package" href="omaha.tests.html" />
-    <link rel="prev" title="Omaha" href="index.html" />
+    <link rel="prev" title="How to install" href="how_to_install.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -278,7 +278,28 @@
 <dl class="method">
 <dt id="omaha.omaha.Omaha.category">
 <code class="sig-name descname">category</code><span class="sig-paren">(</span><em class="sig-param">cat</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of companies filtering by the given category</p>
+<dd><p>List of companies filtering by the given TSE 33 sectors.</p>
+<p>See: <a class="reference external" href="https://www.jpx.co.jp/english/markets/indices/line-up/files/e_fac_13_sector.pdf">https://www.jpx.co.jp/english/markets/indices/line-up/files/e_fac_13_sector.pdf</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>str</em>) – Keyword used for searching companies</p></li>
+<li><p><strong>from_q</strong> (<em>str</em>) – Beginning quarter of the target range</p></li>
+<li><p><strong>to_q</strong> (<em>str</em>) – End quarter of the target range</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of companies matching with the given TSE 33 sectors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span> <span class="o">=</span> <span class="n">Omaha</span><span class="p">(</span><span class="n">bc_apikey</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span><span class="p">),</span> <span class="n">quandl_apikey</span><span class="o">=</span><span class="s1">&#39;yyyy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">&#39;サービス業&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-12-31&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -311,6 +332,26 @@
 <dt id="omaha.omaha.Omaha.search">
 <code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">keywords</em>, <em class="sig-param">from_q</em>, <em class="sig-param">to_q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/omaha/omaha.html#Omaha.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#omaha.omaha.Omaha.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of matched companies with given search keyword</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>str</em>) – Keyword used for searching companies</p></li>
+<li><p><strong>from_q</strong> (<em>str</em>) – Beginning quarter of the target range</p></li>
+<li><p><strong>to_q</strong> (<em>str</em>) – End quarter of the target range</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of companies matching with the given keyword.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span> <span class="o">=</span> <span class="n">Omaha</span><span class="p">(</span><span class="n">bc_apikey</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span><span class="p">),</span> <span class="n">quandl_apikey</span><span class="o">=</span><span class="s1">&#39;yyyy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factory</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;不動産&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-12-31&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -367,7 +408,9 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_to_install.html">How to install</a></li>
+</ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">omaha package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
@@ -387,7 +430,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Omaha</a></li>
+      <li>Previous: <a href="how_to_install.html" title="previous chapter">How to install</a></li>
       <li>Next: <a href="omaha.tests.html" title="next chapter">omaha.tests package</a></li>
   </ul></li>
 </ul>

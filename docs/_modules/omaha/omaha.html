@@ -85,12 +85,38 @@
 
 <div class="viewcode-block" id="Omaha.search"><a class="viewcode-back" href="../../omaha.html#omaha.omaha.Omaha.search">[docs]</a>    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keywords</span><span class="p">,</span> <span class="n">from_q</span><span class="p">,</span> <span class="n">to_q</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;List of matched companies with given search keyword</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keywords (str): Keyword used for searching companies</span>
+<span class="sd">            from_q (str): Beginning quarter of the target range</span>
+<span class="sd">            to_q (str): End quarter of the target range</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          list: List of companies matching with the given keyword.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; factory = Omaha(bc_apikey=&#39;xxxx&#39;), quandl_apikey=&#39;yyyy&#39;)</span>
+<span class="sd">            &gt;&gt;&gt; factory.search(&#39;不動産&#39;, &#39;2019-01-01&#39;, &#39;2019-12-31&#39;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">tickers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keywords</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">company</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">from_q</span><span class="p">,</span> <span class="n">to_q</span><span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Omaha.category"><a class="viewcode-back" href="../../omaha.html#omaha.omaha.Omaha.category">[docs]</a>    <span class="k">def</span> <span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cat</span><span class="p">,</span> <span class="n">from_q</span><span class="p">,</span> <span class="n">to_q</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;List of companies filtering by the given category</span>
+        <span class="sd">&quot;&quot;&quot;List of companies filtering by the given TSE 33 sectors.</span>
+
+<span class="sd">        See: https://www.jpx.co.jp/english/markets/indices/line-up/files/e_fac_13_sector.pdf</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keywords (str): Keyword used for searching companies</span>
+<span class="sd">            from_q (str): Beginning quarter of the target range</span>
+<span class="sd">            to_q (str): End quarter of the target range</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          list: List of companies matching with the given TSE 33 sectors.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; factory = Omaha(bc_apikey=&#39;xxxx&#39;), quandl_apikey=&#39;yyyy&#39;)</span>
+<span class="sd">            &gt;&gt;&gt; factory.category(&#39;サービス業&#39;, &#39;2019-01-01&#39;, &#39;2019-12-31&#39;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">companies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">companies</span><span class="p">()</span>
         <span class="n">tickers</span> <span class="o">=</span> <span class="p">[]</span>

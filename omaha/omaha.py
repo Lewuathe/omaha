@@ -52,12 +52,38 @@ class Omaha(object):
 
     def search(self, keywords, from_q, to_q):
         """List of matched companies with given search keyword
+
+        Args:
+            keywords (str): Keyword used for searching companies
+            from_q (str): Beginning quarter of the target range
+            to_q (str): End quarter of the target range
+
+        Returns:
+          list: List of companies matching with the given keyword.
+
+        Example:
+            >>> factory = Omaha(bc_apikey='xxxx'), quandl_apikey='yyyy')
+            >>> factory.search('不動産', '2019-01-01', '2019-12-31')
         """
         tickers = self.client.search(keywords)
         return [self.company(ticker, from_q, to_q) for ticker in tickers]
 
     def category(self, cat, from_q, to_q):
-        """List of companies filtering by the given category
+        """List of companies filtering by the given TSE 33 sectors.
+
+        See: https://www.jpx.co.jp/english/markets/indices/line-up/files/e_fac_13_sector.pdf
+
+        Args:
+            keywords (str): Keyword used for searching companies
+            from_q (str): Beginning quarter of the target range
+            to_q (str): End quarter of the target range
+
+        Returns:
+          list: List of companies matching with the given TSE 33 sectors.
+
+        Example:
+            >>> factory = Omaha(bc_apikey='xxxx'), quandl_apikey='yyyy')
+            >>> factory.category('サービス業', '2019-01-01', '2019-12-31')
         """
         companies = self.client.companies()
         tickers = []
