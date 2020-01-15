@@ -6,9 +6,10 @@
 Omaha
 =================================
 
-.. image:: https://img.shields.io/pypi/v/omaha   :alt: PyPI
-.. image:: https://img.shields.io/pypi/pyversions/omaha   :alt: PyPI - Python Version
-.. image:: https://img.shields.io/pypi/l/omaha   :alt: PyPI - License
+.. image:: https://img.shields.io/pypi/v/omaha
+.. image:: https://img.shields.io/pypi/pyversions/omaha
+.. image:: https://img.shields.io/pypi/l/omaha
+.. image:: https://img.shields.io/pypi/dd/omaha
 
 ------------------------------------------------------------------
 Unified view of financial metrics of public companies
