@@ -6,6 +6,10 @@
 Omaha
 =================================
 
+.. image:: https://img.shields.io/pypi/v/omaha   :alt: PyPI
+.. image:: https://img.shields.io/pypi/pyversions/omaha   :alt: PyPI - Python Version
+.. image:: https://img.shields.io/pypi/l/omaha   :alt: PyPI - License
+
 ------------------------------------------------------------------
 Unified view of financial metrics of public companies
 ------------------------------------------------------------------
@@ -37,6 +41,15 @@ Omaha aims to provide a unified view of financial metrics of the company. It's d
 
    factory.search("不動産", "2019Q1", "2019Q4")
    # [Company(8881, 2019Q1, 2019Q4), Company(8802, 2019Q1, 2019Q4), Company(3465, 2019Q1, 2019Q4),...]
+
+-----------------------
+How to install
+-----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   how_to_install
 
 ---------------------------------
 External Services
