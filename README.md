@@ -9,7 +9,7 @@ Omaha aims to provide a unified view of financial metrics of the company.
 Please visit the [official documentation](https://www.lewuathe.com/omaha/) for more detail. [This](https://www.lewuathe.com/omaha-lightweight-financial-data-collection-module.html) is also an blog article useful to see how omaha can be used for financial data analysis.
 
 - [Omaha: Unified view of financial metrics of public companies](https://www.lewuathe.com/omaha-lightweight-financial-data-collection-module.html)
--
+
 ## Note
 
 It only supports Japanese company for now.
