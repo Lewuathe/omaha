@@ -52,6 +52,12 @@ How to install
 
    how_to_install
 
+-----------------------
+Example
+-----------------------
+
+-  `Illustration of Aggregated Financial Metrics <https://www.lewuathe.com/omaha-lightweight-financial-data-collection-module.html>`_
+
 ---------------------------------
 External Services
 ---------------------------------
