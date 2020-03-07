@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import unittest
 from unittest.mock import MagicMock
 import requests_mock
